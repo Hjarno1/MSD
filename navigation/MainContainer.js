@@ -15,6 +15,7 @@ const moreName = 'More';
 const catalogName = 'Catalog';
 const searchName = 'Search'
 const userName = 'User';
+
 const Tab = createBottomTabNavigator();
 
 function MainContainer() {
@@ -48,7 +49,7 @@ function MainContainer() {
             activeTintColor: '#1EA896',
             inactiveTintColor: 'grey',
             labelStyle: { paddingBottom: 10, fontSize: 10 },
-            style: { padding: 10, height: 70}
+            style: { padding: 10, height: 60}
           }}>
   
           <Tab.Screen name={homeName} component={HomeScreen} />

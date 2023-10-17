@@ -7,7 +7,7 @@ export default function HomeScreen({}){
             <Text
                 onPress={() =>alert('This is the Home screen.')}
                 style={{ fontSize: 26, fontWeight: 'bold'}}>
-                This is Home
+                This is Homesssssssssss
             </Text>
         </SafeAreaView>
     );
