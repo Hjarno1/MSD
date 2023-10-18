@@ -28,7 +28,7 @@ function MainContainer() {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             let rn = route.name;
-
+                                // Denne her lille if-else statement kontrollere vores icons
             if (rn === homeName) {
               iconName = focused ? 'home' : 'home-outline';
             } else if (rn === moreName) {
@@ -40,17 +40,17 @@ function MainContainer() {
             } else if (rn === userName) {
               iconName = focused ? 'person' : 'person';
             }
-
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-        })}
+        })} //Det her er styling til vores nav-basr i bunden
         tabBarOptions={{
           activeTintColor: '#1EA896',
           inactiveTintColor: 'grey',
           labelStyle: { paddingBottom: 10, fontSize: 10 },
           style: { padding: 10, height: 60 }
         }
-        }>
+        // Det her er vores navbar links, hvis man kan kalde det
+        }> 
         <Tab.Screen name={homeName} component={HomeScreen} />
         <Tab.Screen name={catalogName} component={CatalogStackScreen} />
         <Tab.Screen name={searchName} component={SearchScreen} />
