@@ -10,8 +10,8 @@ export default function CatalogScreen({}) {
         // Add more car items here with their respective images
       ];
 
-      const navigation = useNavigation(); 
-      
+      const navigation = useNavigation(); // Use useNavigation
+
       return (
         <SafeAreaView style={styles.container}>
           <FlatList
@@ -28,7 +28,7 @@ export default function CatalogScreen({}) {
                 <Button
                     title="Details"
                     onPress={() => {
-                        navigation.navigate('CarDetails', { car: item }); 
+                        navigation.navigate('CarDetails', { car: item }); // Navigate to CarDetails screen with car data
                     }}
                 />
               </View>
