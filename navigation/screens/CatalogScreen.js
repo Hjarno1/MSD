@@ -38,27 +38,6 @@ export default function CatalogScreen({}) {
       );
 };
 
-const CarItem = ({ car }) => {
-    const navigation = useNavigation();
-  
-    const handleViewPress = () => {
-      navigation.navigate('CarDetails', { car });
-    };
-  
-    return (
-      <View>
-        <Image
-          source={{ uri: car.picture }}
-          style={styles.carImage}
-        />
-        <Text>{car.name}</Text>
-        <TouchableOpacity onPress={handleViewPress}>
-          <Text>View</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  };
-
 const styles = StyleSheet.create({
     container: {
       flex: 1,
