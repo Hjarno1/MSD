@@ -3,20 +3,17 @@ import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Dimensions } fr
 
 export default function HomeScreen({ navigation }) {
     const handleSignIn = () => {
-        // Add your sign-in logic here
-        // For example, you can navigate to a sign-in screen.
+
         navigation.navigate('SignInScreen');
     };
 
     const handleSignUp = () => {
-        // Add your sign-up logic here
-        // For example, you can navigate to a sign-up screen.
+
         navigation.navigate('SignUpScreen');
     };
 
     const handleContinueAsGuest = () => {
-        // Add your logic for continuing as a guest here
-        // You can navigate to the main app screen for guests.
+
         navigation.navigate('GuestScreen');
     };
 
@@ -49,14 +46,14 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     buttonContainer: {
-        width: Dimensions.get('window').width, // Make the container the full width of the screen
+        width: Dimensions.get('window').width, 
         alignItems: 'center',
     },
     button: {
         backgroundColor: '#1EA896',
-        width: Dimensions.get('window').width, // Make the button the full width of the screen
+        width: Dimensions.get('window').width, 
         padding: 15,
-        marginVertical: 10, // Add vertical margin to separate buttons
+        marginVertical: 10, 
         alignItems: 'center',
         borderRadius: 5,
     },

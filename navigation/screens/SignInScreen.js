@@ -4,7 +4,15 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 export default function SignInScreen({ navigation }) {
     const handleSignIn = () => {
         // Add your sign-in logic here
-        // You may want to check user credentials and navigate to the main app screen on successful sign-in.
+        // You may want to check user credentials and navigate to the UserScreen on successful sign-in.
+        
+        // For demonstration, I'm simulating a successful sign-in here.
+        // Replace this with your actual sign-in logic.
+        const userSignedIn = true;
+
+        if (userSignedIn) {
+            navigation.navigate('User'); // Redirect to the UserScreen
+        }
     };
 
     return (

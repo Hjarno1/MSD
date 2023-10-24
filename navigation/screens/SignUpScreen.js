@@ -4,7 +4,15 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 export default function SignUpScreen({ navigation }) {
     const handleSignUp = () => {
         // Add your sign-up logic here
-        // You may want to create a new user account and navigate to the main app screen on successful sign-up.
+        // You may want to create a new user account and navigate to the UserScreen on successful sign-up.
+        
+        // For demonstration, I'm simulating a successful sign-up here.
+        // Replace this with your actual sign-up logic.
+        const userSignedUp = true;
+
+        if (userSignedUp) {
+            navigation.navigate('User'); // Redirect to the UserScreen
+        }
     };
 
     return (
