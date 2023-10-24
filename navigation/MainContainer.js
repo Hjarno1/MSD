@@ -10,6 +10,11 @@ import MoreInformationScreen from './screens/MoreInformationScreen';
 import UserScreen from './screens/UserScreen';
 import CarDetails from './screens/CarDetails';
 
+// Import the new screens
+import SignInScreen from './screens/SignInScreen';
+import SignUpScreen from './screens/SignUpScreen';
+import GuestScreen from './screens/GuestScreen';
+
 const homeName = 'Home';
 const moreName = 'More';
 const catalogName = 'Catalog';
@@ -26,7 +31,6 @@ function MainContainer() {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             let rn = route.name;
-                                // Denne her lille if-else statement kontrollere vores icons
             if (rn === homeName) {
               iconName = focused ? 'home' : 'home-outline';
             } else if (rn === moreName) {
@@ -38,19 +42,23 @@ function MainContainer() {
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-        })} //Det her er styling til vores nav-basr i bunden
+        })}
         tabBarOptions={{
           activeTintColor: '#1EA896',
           inactiveTintColor: 'grey',
           labelStyle: { paddingBottom: 10, fontSize: 10 },
           style: { padding: 10, height: 60 }
-        }
-        // Det her er vores navbar links, hvis man kan kalde det
-        }> 
+        }}
+      >
         <Tab.Screen name={homeName} component={HomeScreen} />
         <Tab.Screen name={catalogName} component={CatalogStackScreen} />
         <Tab.Screen name={moreName} component={MoreInformationScreen} />
         <Tab.Screen name={userName} component={UserScreen} />
+
+        {/* Add Sign-In, Sign-Up, and Guest Screens here */}
+        <Tab.Screen name="SignInScreen" component={SignInScreen} />
+        <Tab.Screen name="SignUpScreen" component={SignUpScreen} />
+        <Tab.Screen name="GuestScreen" component={GuestScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
