@@ -9,8 +9,6 @@ import CatalogScreen from './screens/CatalogScreen';
 import MoreInformationScreen from './screens/MoreInformationScreen';
 import UserScreen from './screens/UserScreen';
 import CarDetails from './screens/CarDetails';
-
-// Import the new screens
 import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import GuestScreen from './screens/GuestScreen';
@@ -50,15 +48,11 @@ function MainContainer() {
           style: { padding: 10, height: 60 }
         }}
       >
-        <Tab.Screen name={homeName} component={HomeScreen} />
+        <Tab.Screen name={homeName} component={AuthenticationStackScreen} />
         <Tab.Screen name={catalogName} component={CatalogStackScreen} />
         <Tab.Screen name={moreName} component={MoreInformationScreen} />
         <Tab.Screen name={userName} component={UserScreen} />
-
-        {/* Add Sign-In, Sign-Up, and Guest Screens here */}
-        <Tab.Screen name="SignInScreen" component={SignInScreen} />
-        <Tab.Screen name="SignUpScreen" component={SignUpScreen} />
-        <Tab.Screen name="GuestScreen" component={GuestScreen} />
+        
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -75,5 +69,20 @@ function CatalogStackScreen() {
     </CatalogStack.Navigator>
   );
 }
+
+const AuthenticationStack = createStackNavigator();
+
+function AuthenticationStackScreen() {
+  return (
+    <AuthenticationStack.Navigator>
+      <AuthenticationStack.Screen name="HomeScreen" component={HomeScreen} />
+      <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} />
+      <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} />
+      {/* Add any other screens related to authentication here if needed */}
+    </AuthenticationStack.Navigator>
+  );
+}
+
 
 export default MainContainer;
