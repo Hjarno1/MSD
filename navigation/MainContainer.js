@@ -12,6 +12,9 @@ import CarDetails from './screens/CarDetails';
 import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import GuestScreen from './screens/GuestScreen';
+import PersonalScreen from './screens/PersonalScreen';
+import ChangePasswordScreen from './screens/ChangePasswordScreen';
+import PreviousRentScreen from './screens/PreviousRentScreen';
 
 const homeName = 'Home';
 const moreName = 'More';
@@ -52,7 +55,6 @@ function MainContainer() {
         <Tab.Screen name={catalogName} component={CatalogStackScreen} />
         <Tab.Screen name={moreName} component={MoreInformationScreen} />
         <Tab.Screen name={userName} component={UserScreen} />
-        
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -79,6 +81,9 @@ function AuthenticationStackScreen() {
       <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} />
       <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} />
       <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} />
+      <AuthenticationStack.Screen name="PersonalScreen" component={PersonalScreen} />
+      <AuthenticationStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
+      <AuthenticationStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} />
       {/* Add any other screens related to authentication here if needed */}
     </AuthenticationStack.Navigator>
   );
