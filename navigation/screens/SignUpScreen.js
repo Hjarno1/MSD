@@ -11,7 +11,7 @@ export default function SignUpScreen({ navigation }) {
         const userSignedUp = true;
 
         if (userSignedUp) {
-            navigation.navigate('User'); // Redirect to the UserScreen
+            navigation.navigate('PersonalScreen'); // Redirect to the UserScreen
         }
     };
 

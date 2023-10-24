@@ -12,6 +12,7 @@ import CarDetails from './screens/CarDetails';
 import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import GuestScreen from './screens/GuestScreen';
+import PersonalScreen from './screens/PersonalScreen';
 
 const homeName = 'Home';
 const moreName = 'More';
@@ -79,6 +80,7 @@ function AuthenticationStackScreen() {
       <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} />
       <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} />
       <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} />
+      <AuthenticationStack.Screen name="PersonalScreen" component={PersonalScreen} />
       {/* Add any other screens related to authentication here if needed */}
     </AuthenticationStack.Navigator>
   );
