@@ -77,13 +77,13 @@ const AuthenticationStack = createStackNavigator();
 function AuthenticationStackScreen() {
   return (
     <AuthenticationStack.Navigator>
-      <AuthenticationStack.Screen name="HomeScreen" component={HomeScreen} />
-      <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} />
-      <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} />
-      <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} />
-      <AuthenticationStack.Screen name="PersonalScreen" component={PersonalScreen} />
-      <AuthenticationStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} />
-      <AuthenticationStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} />
+      <AuthenticationStack.Screen name="HomeScreen" component={HomeScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="PersonalScreen" component={PersonalScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} options={{ title: ''}}/>
       {/* Add any other screens related to authentication here if needed */}
     </AuthenticationStack.Navigator>
   );
