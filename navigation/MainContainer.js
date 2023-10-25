@@ -54,7 +54,7 @@ function MainContainer() {
         <Tab.Screen name={homeName} component={AuthenticationStackScreen} />
         <Tab.Screen name={catalogName} component={CatalogStackScreen} />
         <Tab.Screen name={moreName} component={MoreInformationScreen} />
-        <Tab.Screen name={userName} component={UserScreen} />
+        <Tab.Screen name={userName} component={UserStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -81,11 +81,22 @@ function AuthenticationStackScreen() {
       <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} options={{ title: ''}}/>
       <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} options={{ title: ''}}/>
       <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} options={{ title: ''}}/>
-      <AuthenticationStack.Screen name="PersonalScreen" component={PersonalScreen} options={{ title: ''}}/>
-      <AuthenticationStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} options={{ title: ''}}/>
-      <AuthenticationStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} options={{ title: ''}}/>
       {/* Add any other screens related to authentication here if needed */}
     </AuthenticationStack.Navigator>
+  );
+}
+
+const userStack = createStackNavigator();
+
+function UserStackScreen() {
+  return (
+    <userStack.Navigator>
+      <userStack.Screen name="UserScreen" component={UserScreen} options={{ title: ''}}/>
+      <userStack.Screen name="PersonalScreen" component={PersonalScreen} options={{ title: ''}}/>
+      <userStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} options={{ title: ''}}/>
+      <userStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} options={{ title: ''}}/>
+      {/* Add any other screens related to authentication here if needed */}
+    </userStack.Navigator>
   );
 }
 
