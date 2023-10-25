@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Alert } from 'react-native';
 
 export default function UserScreen({ navigation }) {
-    const userName = "John Doe"; // Replace with the user's actual name
+    const userName = "Nick Gerr"; // Replace with the user's actual name
 
     const handleLogout = () => {
         Alert.alert(
@@ -81,12 +81,12 @@ const styles = StyleSheet.create({
     },
     link: {
         marginVertical: 10,
-        backgroundColor: 'gray',
+        backgroundColor: '#1EA896',
         padding: 15,
         paddingHorizontal: 60
     },
     linkText: {
-        fontSize: 18,
+        fontSize: 20,
         color: 'white',
         textAlign: 'center',
     },
