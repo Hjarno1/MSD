@@ -18,11 +18,11 @@ export default function CatalogScreen() {
 
  const onChange = (event, selectedDate) => {
   const currentDate = selectedDate || date;
-  setShow(Platform.OS === "android");
+  setShow(false); // Close the picker
   setDate(currentDate);
 
   let tempDate = new Date(currentDate);
-  let fDate = tempDate.getDate() + '/'+ (tempDate.getMonth) + '/' + tempDate.getFullYear();
+  let fDate = tempDate.getDate() + '/'+ (tempDate.getMonth()) + '/' + tempDate.getFullYear();
   let fTime = 'Hours: ' + tempDate.getHours() + '| Minutes: ' + tempDate.getMinutes(); 
 
   console.log(fDate + ' (' + fTime + ')')
