@@ -67,8 +67,8 @@ const CatalogStack = createStackNavigator();
 function CatalogStackScreen() {
   return (
     <CatalogStack.Navigator>
-      <CatalogStack.Screen name="ItemList" component={CatalogScreen} options={{ title: 'Item List' }} />
-      <CatalogStack.Screen name="CarDetails" component={CarDetails} options={{ title: 'Car Details' }} />
+      <CatalogStack.Screen name="ItemList" component={CatalogScreen} options={{ title: 'Car List'}} />
+      <CatalogStack.Screen name="CarDetails" component={CarDetails} options={{ title: 'Car Details'}} />
     </CatalogStack.Navigator>
   );
 }
