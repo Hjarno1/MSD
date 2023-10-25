@@ -22,10 +22,11 @@ export default function CatalogScreen() {
   setDate(currentDate);
 
   let tempDate = new Date(currentDate);
-  let fDate = tempDate.getDate() + '/'+ (tempDate.getMonth()) + '/' + tempDate.getFullYear();
-  let fTime = 'Hours: ' + tempDate.getHours() + '| Minutes: ' + tempDate.getMinutes(); 
+  let fDate = tempDate.getDate() + '/'+ (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear(); // Adding 1 to the month to get the correct month
+  let fTime = 'at ' + tempDate.getHours() + ':' + tempDate.getMinutes(); 
 
-  console.log(fDate + ' (' + fTime + ')')
+  const selectedDateTime = fDate + ' ' + fTime + '';
+  setText(selectedDateTime); // Update the 'text' state variable with the selected date and time
  }
 
  const showMode = (currentMode) => {
@@ -36,12 +37,14 @@ export default function CatalogScreen() {
  return (
    <SafeAreaView style={styles.container}>
      <View>
-     <Text>{text}</Text>
-      <View style={{margin:20}}>
-        <Button title='DatePicker' onPress={() => showMode('date')}/>
-      </View>
-      <View style={{margin:20}}>
-        <Button title='TimePicker' onPress={() => showMode('time')}/>
+     <Text style = {{textAlign: 'center', fontSize: 16}}>{text}</Text>
+      <View style = {styles.pickersOuter}>
+        <View style={styles.pickersInner}>
+          <Button title='DatePicker' onPress={() => showMode('date')}/>
+        </View>
+        <View style={styles.pickersInner}>
+          <Button title='TimePicker' onPress={() => showMode('time')}/>
+        </View>
       </View>
 
       {show && (
@@ -92,11 +95,17 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     marginBottom: 10,
   },
+  pickersOuter: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  pickersInner: {
+    margin: 5,
+  },
   foto: {
     width: 150,
     height: 150,
     borderRadius: 20,
-
     shadowOpacity: 0.1,
     backgroundColor: 'transparent',
     marginLeft: 30,
@@ -113,13 +122,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   carTitle: {
-    fontSize: 18, // Example: Set the font size to 18
-    fontWeight: 'bold', // Example: Apply bold style
-    textAlign: 'center'
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   detailButtonContainer: {
-    flex: 1, // Add flex property
-    justifyContent: 'center', // Center items vertically
-    alignItems: 'center', // Center items horizontally
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
