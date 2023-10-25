@@ -9,6 +9,12 @@ import CatalogScreen from './screens/CatalogScreen';
 import MoreInformationScreen from './screens/MoreInformationScreen';
 import UserScreen from './screens/UserScreen';
 import CarDetails from './screens/CarDetails';
+import SignInScreen from './screens/SignInScreen';
+import SignUpScreen from './screens/SignUpScreen';
+import GuestScreen from './screens/GuestScreen';
+import PersonalScreen from './screens/PersonalScreen';
+import ChangePasswordScreen from './screens/ChangePasswordScreen';
+import PreviousRentScreen from './screens/PreviousRentScreen';
 
 const homeName = 'Home';
 const moreName = 'More';
@@ -26,7 +32,6 @@ function MainContainer() {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             let rn = route.name;
-                                // Denne her lille if-else statement kontrollere vores icons
             if (rn === homeName) {
               iconName = focused ? 'home' : 'home-outline';
             } else if (rn === moreName) {
@@ -38,19 +43,18 @@ function MainContainer() {
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-        })} //Det her er styling til vores nav-basr i bunden
+        })}
         tabBarOptions={{
           activeTintColor: '#1EA896',
           inactiveTintColor: 'grey',
           labelStyle: { paddingBottom: 10, fontSize: 10 },
           style: { padding: 10, height: 60 }
-        }
-        // Det her er vores navbar links, hvis man kan kalde det
-        }> 
-        <Tab.Screen name={homeName} component={HomeScreen} />
+        }}
+      >
+        <Tab.Screen name={homeName} component={AuthenticationStackScreen} />
         <Tab.Screen name={catalogName} component={CatalogStackScreen} />
         <Tab.Screen name={moreName} component={MoreInformationScreen} />
-        <Tab.Screen name={userName} component={UserScreen} />
+        <Tab.Screen name={userName} component={UserStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -62,10 +66,39 @@ const CatalogStack = createStackNavigator();
 function CatalogStackScreen() {
   return (
     <CatalogStack.Navigator>
-      <CatalogStack.Screen name="ItemList" component={CatalogScreen} options={{ title: 'Car List'}} />
-      <CatalogStack.Screen name="CarDetails" component={CarDetails} options={{ title: 'Car Details'}} />
+      <CatalogStack.Screen name="ItemList" component={CatalogScreen} options={{ title: 'Item List', headerShown: false }} />
+      <CatalogStack.Screen name="CarDetails" component={CarDetails} options={{ title: 'Car Details' }} />
     </CatalogStack.Navigator>
   );
 }
+
+const AuthenticationStack = createStackNavigator();
+
+function AuthenticationStackScreen() {
+  return (
+    <AuthenticationStack.Navigator>
+      <AuthenticationStack.Screen name="HomeScreen" component={HomeScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} options={{ title: ''}}/>
+      {/* Add any other screens related to authentication here if needed */}
+    </AuthenticationStack.Navigator>
+  );
+}
+
+const userStack = createStackNavigator();
+
+function UserStackScreen() {
+  return (
+    <userStack.Navigator>
+      <userStack.Screen name="UserScreen" component={UserScreen} options={{ title: ''}}/>
+      <userStack.Screen name="PersonalScreen" component={PersonalScreen} options={{ title: ''}}/>
+      <userStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} options={{ title: ''}}/>
+      <userStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} options={{ title: ''}}/>
+      {/* Add any other screens related to authentication here if needed */}
+    </userStack.Navigator>
+  );
+}
+
 
 export default MainContainer;
