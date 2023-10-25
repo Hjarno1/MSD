@@ -2,14 +2,41 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Button, FlatList, Image, TouchableOpacity, Modal, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import axios from "axios";
+import { faker } from '@faker-js/faker';
+
+
 
 export default function CatalogScreen() {
  const navigation = useNavigation();
- const carItems = [
-   { id: '1', name: 'Tesla', model: 'Jog', picture: 'https://images.pexels.com/photos/1805053/pexels-photo-1805053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-   { id: '2', name: 'Sej bil', model: 'Tank', picture: 'https://images.pexels.com/photos/687653/pexels-photo-687653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-   { id: '3', name: 'Car 3', model: 'BMW', picture: 'https://images.pexels.com/photos/1841120/pexels-photo-1841120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
- ];
+
+const createCar = () => {
+  return {
+    id: faker.string.uuid(),
+    name: faker.vehicle.vehicle(),
+    manufacturer: faker.vehicle.manufacturer(),
+    fuel: faker.vehicle.fuel(),
+    vin: faker.vehicle.vin(),
+    picture: faker.image.urlLoremFlickr({ category: 'sportscar' })
+  }
+}
+
+const createCars = (numCars = 15) => {
+  return new Array(numCars)
+    .fill(undefined)
+    .map(createCar);
+}
+
+let fakeCars = createCars(15)
+
+
+ /*const carItems = [
+   //{ id: '1', name: 'Tesla', model: 'Jog', picture: 'https://images.pexels.com/photos/1805053/pexels-photo-1805053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+   { id: '1', name: 'Tesla', model: 'Jog', picture: faker.image.image() },
+   { id: '2', name: 'Sej bil', model: 'Tank', picture: faker.image.image() },
+   { id: '3', name: 'Car 3', model: 'BMW', picture: faker.image.image() },
+ ]; */
+
 
  const [date, setDate] = useState(new Date());
  const [mode, setMode] = useState('date');
@@ -56,10 +83,10 @@ export default function CatalogScreen() {
     </View>
 
      <FlatList
-       data={carItems}
-       keyExtractor={(item) => item.id}
+       data={fakeCars}
+       keyExtractor={(item) => fakeCars.id}
        renderItem={({ item }) => (
-         <View style={styles.carItem}>
+         <View style={styles.fakeCars}>
            <Image source={{ uri: item.picture }} style={styles.foto} />
            <View style={styles.detailButtonContainer}>
             <Text style={styles.carTitle}>{item.name}</Text>
@@ -83,7 +110,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  carItem: {
+  fakeCars: {
     flexDirection: 'row',
     alignItems: 'center',
     height: 200,
