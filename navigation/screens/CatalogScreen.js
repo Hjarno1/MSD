@@ -1,12 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Button, FlatList, Image, TouchableOpacity, Modal, Platform } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import axios from "axios";
 import { faker } from '@faker-js/faker';
 
+
+
 export default function CatalogScreen() {
  const navigation = useNavigation();
+
+
+
+//API Integration
+
+const [cars, setCars] = useState([])
+
+useEffect(() => {
+  axios
+  .get('https://themikkel.dk/unfollow/sdu/cars/cars')
+  .then((res) => 
+  setCars(res.data))
+  .catch(err=>console.log(err))
+})
+
+
+
+
+
 
  const createCar = () => {
     return {
@@ -19,8 +40,8 @@ export default function CatalogScreen() {
     }
  }
 
- const createCars = (numCars = 15) => {
-    return new Array(numCars)
+ const createCars = (numFakeCars = 15) => {
+    return new Array(numFakeCars)
       .fill(undefined)
       .map(createCar);
  }
@@ -89,8 +110,30 @@ export default function CatalogScreen() {
          />
        )}
      </View>
-
+       
      <FlatList
+       data={cars}
+       keyExtractor={(item) => cars.id}
+       renderItem={({ item }) => (
+         <View style={styles.fakeCars}>
+           <Image source={{ uri: item.pictures[0].srcUrl }} style={styles.foto} />
+           <View style={styles.detailButtonContainer}>
+             <Text style={styles.carTitle}>{item.name}</Text>
+             <TouchableOpacity
+               style={styles.detailButton}
+               onPress={() => {
+                 navigation.navigate('CarDetails', { car: item });
+               }}
+             >
+               <Text style={styles.buttonText}>Details</Text>
+             </TouchableOpacity>
+           </View>
+         </View>
+       )}
+     />
+
+
+     {/* <FlatList
        data={fakeCars}
        keyExtractor={(item) => fakeCars.id}
        renderItem={({ item }) => (
@@ -109,7 +152,9 @@ export default function CatalogScreen() {
            </View>
          </View>
        )}
-     />
+     /> */}
+
+
    </SafeAreaView>
  );
 }
