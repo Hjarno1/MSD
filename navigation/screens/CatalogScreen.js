@@ -88,7 +88,6 @@ useEffect(() => {
             title="TimePicker"
             onPress={() => showMode("time")}
             color="#1EA896" // Set the color to match the background color
-            style={{ borderRadius: 20 }} // Add the borderRadius style
           />
         </View>
       </View>
@@ -176,7 +175,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   pickersInner: {
-    margin: 5,
+    marginBottom: 15,
+    marginHorizontal: 20,
   },
   foto: {
     width: 150,

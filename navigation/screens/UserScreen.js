@@ -42,7 +42,7 @@ export default function UserScreen({ navigation }) {
                 <TouchableOpacity
                     style={styles.link}
                     onPress={() => navigation.navigate('PreviousRentScreen')}>
-                    <Text style={styles.linkText}>Previous Rent Periods</Text>
+                    <Text style={styles.linkText}>Rent Periods</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
