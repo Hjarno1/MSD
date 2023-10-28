@@ -74,7 +74,6 @@ useEffect(() => {
  return (
    <SafeAreaView style={styles.container}>
      <View>
-       <Text style={{ textAlign: 'center', fontSize: 16 }}>{text}</Text>
        <View style={styles.pickersOuter}>
         <View style={styles.pickersInner}>
           <Button
@@ -91,6 +90,7 @@ useEffect(() => {
           />
         </View>
       </View>
+      <Text style={{ textAlign: 'center', fontSize: 19, marginBottom: 10 }}>{text}</Text>
        <View
          style={{
            backgroundColor: '#1EA896',
