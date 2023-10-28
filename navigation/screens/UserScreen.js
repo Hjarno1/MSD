@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Alert } from 'react-native';
 
 export default function UserScreen({ navigation }) {
-    const userName = "Nick Gerr"; // Replace with the user's actual name
+    const userName = "User"; // Replace with the user's actual name
 
     const handleLogout = () => {
         Alert.alert(
