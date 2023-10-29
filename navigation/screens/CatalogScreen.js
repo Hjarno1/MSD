@@ -4,6 +4,7 @@ import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import axios from "axios";
 import { faker } from '@faker-js/faker';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
@@ -13,20 +14,46 @@ export default function CatalogScreen() {
 
 
 //API Integration
-
 const [cars, setCars] = useState([])
 
+
 useEffect(() => {
+    //try to load data from the async storage and if it doesn't exist it fetches data from the API
+    AsyncStorage.getItem('carsData')
+      .then((data) => {
+        if (data) {
+          setCars(JSON.parse(data));
+        }
+        else {
+          fetchData();
+        }
+      })
+      .catch((error) => console.error('error retrieving data: ', error));
+  }, []);
+
+const fetchData = () => {
+    axios
+      .get('https://themikkel.dk/unfollow/sdu/cars/cars')
+      .then((res) => {
+        setCars(res.data);
+
+        // stores data in the Async Storage
+        AsyncStorage.setItem('carsData', JSON.stringify(res.data))
+          .then(() => console.log('data stored successfully'))
+          .catch((error) => console.error('error storing data:', error));
+      })
+      .catch((err) => console.log(err));
+  };
+
+//Old API implementation no persistence
+/*useEffect(() => {
   axios
   .get('https://themikkel.dk/unfollow/sdu/cars/cars')
   .then((res) => 
   setCars(res.data))
   .catch(err=>console.log(err))
 })
-
-
-
-
+*/
 
 
  const createCar = () => {
