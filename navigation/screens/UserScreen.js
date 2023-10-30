@@ -17,9 +17,8 @@ export default function UserScreen({ navigation }) {
                     text: "Log Out",
                     onPress: () => {
                         // Perform the log out action here
-                        // For example, you can call a function to log the user out and navigate to the login screen
-                        // Replace the next line with your log out logic
-                        navigation.navigate('Home');
+                        // Navigate to the SignScreen within the AuthenticationStack
+                        navigation.navigate('SignScreen');
                     },
                 },
             ]
