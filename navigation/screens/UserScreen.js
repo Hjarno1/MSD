@@ -19,7 +19,7 @@ export default function UserScreen({ navigation }) {
                         // Perform the log out action here
                         // For example, you can call a function to log the user out and navigate to the login screen
                         // Replace the next line with your log out logic
-                        navigation.navigate('HomeScreen');
+                        navigation.navigate('Home');
                     },
                 },
             ]

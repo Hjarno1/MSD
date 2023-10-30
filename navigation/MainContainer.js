@@ -15,6 +15,7 @@ import GuestScreen from './screens/GuestScreen';
 import PersonalScreen from './screens/PersonalScreen';
 import ChangePasswordScreen from './screens/ChangePasswordScreen';
 import PreviousRentScreen from './screens/PreviousRentScreen';
+import NewHomeScreen from './screens/NewHomeScreen'
 
 const homeName = 'Home';
 const moreName = 'More';
@@ -53,7 +54,7 @@ function MainContainer() {
           style: { padding: 10, height: 60},
         }}
       >
-        <Tab.Screen name={homeName} component={AuthenticationStackScreen} />
+        <Tab.Screen name={homeName} component={NewHomeScreen} />
         <Tab.Screen name={catalogName} component={CatalogStackScreen} />
         <Tab.Screen name={moreName} component={MoreInformationScreen} />
         <Tab.Screen name={userName} component={UserStackScreen} />
