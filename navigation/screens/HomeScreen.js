@@ -20,7 +20,7 @@ export default function HomeScreen({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             <Text
-                style={{ fontSize: 26, fontWeight: 'bold', marginTop: 20 }}>
+                style={{ fontSize: 26, fontWeight: 'bold', marginTop: 20, color: 'white' }}>
                 Welcome to SOCKS!
             </Text>
             <View style={styles.buttonContainer}>
@@ -41,16 +41,17 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#007EA7',
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
     buttonContainer: {
         width: Dimensions.get('window').width, 
         alignItems: 'center',
+        marginTop: 100
     },
     button: {
-        backgroundColor: '#1EA896',
+        backgroundColor: '#003459',
         width: Dimensions.get('window').width, 
         padding: 15,
         marginVertical: 10, 

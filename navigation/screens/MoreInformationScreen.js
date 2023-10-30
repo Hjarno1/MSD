@@ -37,7 +37,7 @@ export default function UserScreen({ navigation }) {
                             To use our car rental app, renters must be at least 21 years old with a 
                             valid driver's license. Reservations can be made online for a minimum one-day
                             rental.{" "}
-                            <Text style={{ color: 'blue' }} onPress={toggleRuleExpand}>Read more</Text>
+                            <Text style={{ color: '#00A8E8'}} onPress={toggleRuleExpand}>Read more</Text>
                         </Text>
                     )}
                 </View>
@@ -68,7 +68,7 @@ export default function UserScreen({ navigation }) {
                             Welcome to the SOCKS App. By using the App, you agree to 
                             these Terms of Service, which govern your access and use of the App provided 
                             by SOCKS. You must be at least 18 years old to use the App.{'\n'}
-                            <Text style={{ color: 'blue' }} onPress={toggleTermsExpand}>Read more</Text>
+                            <Text style={{ color: '#00A8E8' }} onPress={toggleTermsExpand}>Read more</Text>
                         </Text>
                     )}
                 </View>
@@ -82,31 +82,35 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#007EA7'
     },
     contentContainer: {
         alignItems: 'center',
         padding: 16,
-        width: '80%'
+        width: '80%',
     },
     pageHeader: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 16,
+        color: 'white'
     },
     paragraphContainer: {
         marginBottom: 16,
-        backgroundColor: 'white',
         borderRadius: 10,
         marginTop: 20,
+        backgroundColor: '#003459'
     },
     header: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 8,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     },
     paragraph: {
         fontSize: 16,
         lineHeight: 24,
+        color: 'white',
+        margin: 15
     },
 });

@@ -17,7 +17,7 @@ export default function SignInScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 26, fontWeight: 'bold' }}>Sign In</Text>
+            <Text style={{ fontSize: 26, fontWeight: 'bold', color: 'white'}}>Sign In</Text>
             <TextInput
                 placeholder="Username or Email"
                 style={styles.input}
@@ -27,7 +27,7 @@ export default function SignInScreen({ navigation }) {
                 style={styles.input}
                 secureTextEntry
             />
-            <Button title="Sign In" onPress={handleSignIn} />
+            <Button color='#003459' title="Sign In" onPress={handleSignIn} />
         </View>
     );
 }
@@ -35,7 +35,7 @@ export default function SignInScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#007EA7',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -45,5 +45,6 @@ const styles = StyleSheet.create({
         padding: 10,
         borderColor: 'gray',
         borderWidth: 1,
+        backgroundColor: 'white'
     },
 });

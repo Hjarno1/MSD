@@ -66,13 +66,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#007EA7'
     },
     userInfo: {
-        marginBottom: 20,
+        marginBottom: 10,
+        marginTop: 30,
     },
     userName: {
         fontSize: 24,
         fontWeight: 'bold',
+        color: 'white'
     },
     linkContainer: {
         flex: 1,
@@ -81,9 +84,10 @@ const styles = StyleSheet.create({
     },
     link: {
         marginVertical: 10,
-        backgroundColor: '#1EA896',
+        backgroundColor: '#003459',
         padding: 15,
-        paddingHorizontal: 60
+        paddingHorizontal: 60,
+        borderRadius: 10
     },
     linkText: {
         fontSize: 20,

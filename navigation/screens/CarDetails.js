@@ -53,23 +53,10 @@ const CarDetails = ({ route }) => {
             <Text style={styles.priceText}>{car.price} dkk/day</Text>
           </DetailCard>
         </View>
-
         {/* Centered "Book Now" button at the bottom of Reservation Details */}
         <TouchableOpacity style={styles.bookNowButton}>
           <Text style={styles.bookNowButtonText}>Book Now</Text>
         </TouchableOpacity>
-      </View>
-
-      {/* Functionality Details */}
-      <View style={styles.detailsContainer}>
-        <Text style={styles.sectionTitle}>Functionality Details</Text>
-        {/* Add functionality details here */}
-      </View>
-
-      {/* General Rules */}
-      <View style={styles.detailsContainer}>
-        <Text style={styles.sectionTitle}>General Rules</Text>
-        {/* Add general rules here */}
       </View>
     </ScrollView>
   );
@@ -94,6 +81,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    backgroundColor: '#007EA7'
   },
   pageTitle: {
     fontSize: 24,
@@ -106,6 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     textAlign: 'center',
+    color: 'white'
   },
   carImage: {
     width: '100%',
@@ -113,7 +102,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   detailsContainer: {
-    backgroundColor: 'white',
+    backgroundColor: '#003459',
     borderRadius: 8,
     marginVertical: 10,
     padding: 10,
@@ -125,6 +114,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     textAlign: 'center',
+    color: 'white',
   },
   detailsRow: {
     flexDirection: 'row',
@@ -141,6 +131,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 5,
+    color: 'white',
   },
   detailItem: {
     flexDirection: 'row',
@@ -149,17 +140,20 @@ const styles = StyleSheet.create({
   },
   detailItemLabel: {
     fontSize: 16,
+    color: 'white'
   },
   detailItemValue: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: 'white'
   },
   priceText: {
     fontSize: 18,
     textAlign: 'center',
+    color: 'white'
   },
   bookNowButton: {
-    backgroundColor: '#1EA896',
+    backgroundColor: '#00171F',
     padding: 15,
     borderRadius: 8,
   },

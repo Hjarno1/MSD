@@ -45,10 +45,12 @@ function MainContainer() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: '#1EA896',
-          inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 60 }
+          activeTintColor: '#003459',
+          inactiveTintColor: 'white',
+          activeBackgroundColor: '#007EA7',
+          inactiveBackgroundColor: '#007EA7',
+          labelStyle: { paddingBottom: 10, fontSize: 10},
+          style: { padding: 10, height: 60},
         }}
       >
         <Tab.Screen name={homeName} component={AuthenticationStackScreen} />
@@ -77,10 +79,10 @@ const AuthenticationStack = createStackNavigator();
 function AuthenticationStackScreen() {
   return (
     <AuthenticationStack.Navigator>
-      <AuthenticationStack.Screen name="HomeScreen" component={HomeScreen} options={{ title: ''}}/>
-      <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} options={{ title: ''}}/>
-      <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} options={{ title: ''}}/>
-      <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen} options={{ title: ''}}/>
+      <AuthenticationStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false}}/>
+      <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} options={{}}/>
+      <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} options={{}}/>
+      <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen}  options={{ }}/>
       {/* Add any other screens related to authentication here if needed */}
     </AuthenticationStack.Navigator>
   );
@@ -91,10 +93,10 @@ const userStack = createStackNavigator();
 function UserStackScreen() {
   return (
     <userStack.Navigator>
-      <userStack.Screen name="UserScreen" component={UserScreen} options={{ title: ''}}/>
-      <userStack.Screen name="PersonalScreen" component={PersonalScreen} options={{ title: ''}}/>
-      <userStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} options={{ title: ''}}/>
-      <userStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} options={{ title: ''}}/>
+      <userStack.Screen name="UserScreen" component={UserScreen} options={{ headerShown: false}}/>
+      <userStack.Screen name="PersonalScreen" component={PersonalScreen} options={{ }}/>
+      <userStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} options={{ }}/>
+      <userStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} options={{ }}/>
       {/* Add any other screens related to authentication here if needed */}
     </userStack.Navigator>
   );

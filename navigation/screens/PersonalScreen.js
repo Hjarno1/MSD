@@ -33,8 +33,8 @@ export default function PersonalScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.firstcontainer}>
-          <Text style={{ fontSize: 26, fontWeight: 'bold', textAlign: 'center' }}> Personal Information </Text>
-          <Text style={{ fontSize: 17, textAlign: 'center' }}>
+          <Text style={{ fontSize: 26, fontWeight: 'bold', textAlign: 'center', color: 'white' }}> Personal Information </Text>
+          <Text style={{ fontSize: 17, textAlign: 'center', color: 'white' }}>
             Before continuing, we need further information to set up your profile {'\n'}{'\n'}
           </Text>
 
@@ -74,7 +74,7 @@ export default function PersonalScreen({ navigation }) {
             onChangeText={text => setCountry(text)}
           />
 
-          <Button title="Save" onPress={savePersonalInfo} />
+          <Button color='#003459' title="Save" onPress={savePersonalInfo} />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -84,7 +84,7 @@ export default function PersonalScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#007EA7',
     alignItems: 'center',
   },
   scrollContainer: {
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
   inputPlaceholder: {
     fontSize: 16,
     marginBottom: 5,
+    color: 'white'
   },
   input: {
     padding: 10,

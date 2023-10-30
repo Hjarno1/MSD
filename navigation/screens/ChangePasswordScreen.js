@@ -13,8 +13,8 @@ export default function ChangePasswordScreen({ navigation }) {
     };
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ fontSize: 26, fontWeight: 'bold' }}>Change Password</Text>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#007EA7' }}>
+            <Text style={{ fontSize: 26, fontWeight: 'bold', color:'white' }}>Change Password</Text>
             <TextInput
                 placeholder="Current Password"
                 secureTextEntry={true}
@@ -36,7 +36,7 @@ export default function ChangePasswordScreen({ navigation }) {
                 onChangeText={setConfirmPassword}
                 style={styles.input}
             />
-            <Button title="Change Password" onPress={handlePasswordChange} />
+            <Button color='#003459' title="Change Password" onPress={handlePasswordChange} />
         </View>
     );
 }
@@ -49,5 +49,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         margin: 10,
         paddingLeft: 10,
+        backgroundColor: 'white'
     },
 });

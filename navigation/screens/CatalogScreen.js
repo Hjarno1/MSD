@@ -106,21 +106,21 @@ const fetchData = () => {
           <Button
             title="DatePicker"
             onPress={() => showMode("date")}
-            color="#1EA896" // Set the color to match the background color
+            color='#003459' // Set the color to match the background color
           />
         </View>
         <View style={styles.pickersInner}>
           <Button
             title="TimePicker"
             onPress={() => showMode("time")}
-            color="#1EA896" // Set the color to match the background color
+            color='#003459' // Set the color to match the background color
           />
         </View>
       </View>
-      <Text style={{ textAlign: 'center', fontSize: 19, marginBottom: 10 }}>{text}</Text>
+      <Text style={{ textAlign: 'center', fontSize: 19, marginBottom: 10, color: 'white', fontWeight: 'bold' }}>{text}</Text>
        <View
          style={{
-           backgroundColor: '#1EA896',
+           backgroundColor: '#00171F',
            height: 4.5,
            width: '100%',
          }}
@@ -188,13 +188,14 @@ const fetchData = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#007EA7'
   },
   fakeCars: {
     flexDirection: 'row',
     alignItems: 'center',
     height: 200,
-    backgroundColor: '#f0f0f0',
-    borderColor: '#1EA896',
+    backgroundColor: '#007EA7',
+    borderColor: '#00171F',
     borderBottomWidth: 5,
   },
   pickersOuter: {
@@ -214,7 +215,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
   },
   detailButton: {
-    backgroundColor: '#1EA896',
+    backgroundColor: '#003459',
     padding: 10,
     borderRadius: 5,
     marginTop: 10,
@@ -223,11 +224,13 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     textAlign: 'center',
+    fontSize: 15,
   },
   carTitle: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
+    color: '#00171F'
   },
   detailButtonContainer: {
     flex: 1,
