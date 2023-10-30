@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from './screens/HomeScreen';
+import SignScreen from './screens/SignScreen';
 import CatalogScreen from './screens/CatalogScreen';
 import MoreInformationScreen from './screens/MoreInformationScreen';
 import UserScreen from './screens/UserScreen';
@@ -75,19 +75,6 @@ function CatalogStackScreen() {
   );
 }
 
-const AuthenticationStack = createStackNavigator();
-
-function AuthenticationStackScreen() {
-  return (
-    <AuthenticationStack.Navigator>
-      <AuthenticationStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false}}/>
-      <AuthenticationStack.Screen name="SignInScreen" component={SignInScreen} options={{}}/>
-      <AuthenticationStack.Screen name="SignUpScreen" component={SignUpScreen} options={{}}/>
-      <AuthenticationStack.Screen name="GuestScreen" component={GuestScreen}  options={{ }}/>
-      {/* Add any other screens related to authentication here if needed */}
-    </AuthenticationStack.Navigator>
-  );
-}
 
 const userStack = createStackNavigator();
 
@@ -98,6 +85,10 @@ function UserStackScreen() {
       <userStack.Screen name="PersonalScreen" component={PersonalScreen} options={{ }}/>
       <userStack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen} options={{ }}/>
       <userStack.Screen name="PreviousRentScreen" component={PreviousRentScreen} options={{ }}/>
+      <userStack.Screen name="SignScreen" component={SignScreen} options={{ headerShown: false}}/>
+      <userStack.Screen name="SignInScreen" component={SignInScreen} options={{}}/>
+      <userStack.Screen name="SignUpScreen" component={SignUpScreen} options={{}}/>
+      <userStack.Screen name="GuestScreen" component={GuestScreen}  options={{ }}/>
       {/* Add any other screens related to authentication here if needed */}
     </userStack.Navigator>
   );
