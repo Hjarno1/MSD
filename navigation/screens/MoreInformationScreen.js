@@ -59,8 +59,8 @@ export default function UserScreen({ navigation }) {
                             We may terminate your access for violating these terms. The App is provided 
                             'as is,' and we disclaim warranties. We are not liable for damages 
                             resulting from your use of the App. We reserve the right to update 
-                            these terms, and the App is governed by the laws of [DAWWAAK]. 
-                            If you have questions, contact us at [Your Contact Information]. 
+                            these terms, and the App is governed by the laws of Denmark. 
+                            If you have questions, contact us at XXX. 
                             Thank you for using SOCKS.
                         </Text>
                     ) : (

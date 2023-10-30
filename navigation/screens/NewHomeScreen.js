@@ -9,7 +9,7 @@ export default function UserScreen({ navigation }) {
             <View style={styles.linkContainer}>
                 <TouchableOpacity
                     style={styles.link}
-                    onPress={() => navigation.navigate('ItemList')}>
+                    onPress={() => navigation.navigate('Catalog')}>
                     <Text style={styles.linkText}>Browse our cars</Text>
                 </TouchableOpacity>
 

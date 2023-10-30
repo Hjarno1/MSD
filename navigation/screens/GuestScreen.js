@@ -7,7 +7,7 @@ export default function GuestScreen({ navigation }) {
         <View style={styles.container}>
             <Text style={{ fontSize: 26, fontWeight: 'bold', color: 'white' }}>Welcome, Guest!</Text>
             <Text style={{color: 'white'}}>This is the content available to guest users.</Text>
-            <Button color='#003459' title="Continue as Guest" onPress={() => navigation.navigate('MainAppScreen')} />
+            <Button color='#003459' title="Continue as Guest" onPress={() => navigation.navigate('Home')} />
         </View>
     );
 }
