@@ -101,7 +101,6 @@ const fetchData = () => {
  return (
    <SafeAreaView style={styles.container}>
      <View>
-       <Text style={{ textAlign: 'center', fontSize: 16 }}>{text}</Text>
        <View style={styles.pickersOuter}>
         <View style={styles.pickersInner}>
           <Button
@@ -115,10 +114,10 @@ const fetchData = () => {
             title="TimePicker"
             onPress={() => showMode("time")}
             color="#1EA896" // Set the color to match the background color
-            style={{ borderRadius: 20 }} // Add the borderRadius style
           />
         </View>
       </View>
+      <Text style={{ textAlign: 'center', fontSize: 19, marginBottom: 10 }}>{text}</Text>
        <View
          style={{
            backgroundColor: '#1EA896',
@@ -203,7 +202,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   pickersInner: {
-    margin: 5,
+    marginBottom: 15,
+    marginHorizontal: 20,
   },
   foto: {
     width: 150,

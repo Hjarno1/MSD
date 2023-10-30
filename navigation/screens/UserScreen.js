@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Alert } from 'react-native';
 
 export default function UserScreen({ navigation }) {
-    const userName = "Nick Gerr"; // Replace with the user's actual name
+    const userName = "User"; // Replace with the user's actual name
 
     const handleLogout = () => {
         Alert.alert(
@@ -42,7 +42,7 @@ export default function UserScreen({ navigation }) {
                 <TouchableOpacity
                     style={styles.link}
                     onPress={() => navigation.navigate('PreviousRentScreen')}>
-                    <Text style={styles.linkText}>Previous Rent Periods</Text>
+                    <Text style={styles.linkText}>Rent Periods</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
