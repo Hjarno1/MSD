@@ -17,51 +17,63 @@ import ChangePasswordScreen from './screens/ChangePasswordScreen';
 import PreviousRentScreen from './screens/PreviousRentScreen';
 import NewHomeScreen from './screens/NewHomeScreen'
 
-const homeName = 'Home';
-const moreName = 'More';
-const catalogName = 'Catalog';
-const userName = 'User';
-
 const Tab = createBottomTabNavigator();
 
-function MainContainer() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName={homeName}
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-            let rn = route.name;
-            if (rn === homeName) {
-              iconName = focused ? 'home' : 'home-outline';
-            } else if (rn === moreName) {
-              iconName = focused ? 'information-circle' : 'information-circle-outline';
-            } else if (rn === catalogName) {
-              iconName = focused ? 'book' : 'book-outline';
-            }  else if (rn === userName) {
-              iconName = focused ? 'person' : 'person';
-            }
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: '#003459',
-          inactiveTintColor: 'white',
-          activeBackgroundColor: '#007EA7',
-          inactiveBackgroundColor: '#007EA7',
-          labelStyle: { paddingBottom: 10, fontSize: 10},
-          style: { padding: 10, height: 60},
-        }}
-      >
-        <Tab.Screen name={homeName} component={NewHomeScreen} />
-        <Tab.Screen name={catalogName} component={CatalogStackScreen} />
-        <Tab.Screen name={moreName} component={MoreInformationScreen} />
-        <Tab.Screen name={userName} component={UserStackScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-}
+const screenOptions = (route, homeName, moreName, catalogName, userName) => ({
+    tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+        let rn = route.name;
+        if (rn === homeName) {
+            iconName = focused ? 'home' : 'home-outline';
+        } else if (rn === moreName) {
+            iconName = focused ? 'information-circle' : 'information-circle-outline';
+        } else if (rn === catalogName) {
+            iconName = focused ? 'book' : 'book-outline';
+        } else if (rn === userName) {
+            iconName = focused ? 'person' : 'person';
+        }
+        return <Ionicons name={iconName} size={size} color={color} />;
+    },
+});
+
+const tabBarOptions = {
+    tabBarActiveTintColor: '#003459',
+    tabBarInactiveTintColor: 'white',
+    tabBarActiveBackgroundColor: '#007EA7',
+    tabBarInactiveBackgroundColor: '#007EA7',
+    tabBarLabelStyle: {
+        paddingBottom: 10,
+        fontSize: 10
+    },
+    tabBarStyle: [
+        {
+            display: 'flex'
+        },
+        null
+    ]
+};
+
+const MainContainer = () => {
+    const homeName = 'Home';
+    const catalogName = 'Catalog';
+    const moreName = 'More';
+    const userName = 'User';
+
+    return (
+        <NavigationContainer>
+            <Tab.Navigator
+                initialRouteName={homeName}
+                screenOptions={({ route }) => screenOptions(route, homeName, moreName, catalogName, userName)}
+                tabBarOptions={tabBarOptions}
+            >
+                <Tab.Screen name={homeName} component={NewHomeScreen} />
+                <Tab.Screen name={catalogName} component={CatalogStackScreen} />
+                <Tab.Screen name={moreName} component={MoreInformationScreen} />
+                <Tab.Screen name={userName} component={UserStackScreen} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
+};
 
 // Create a Stack Navigator for CatalogScreen and CarDetails
 const CatalogStack = createStackNavigator();
@@ -89,7 +101,6 @@ function UserStackScreen() {
       <userStack.Screen name="SignInScreen" component={SignInScreen} options={{}}/>
       <userStack.Screen name="SignUpScreen" component={SignUpScreen} options={{}}/>
       <userStack.Screen name="GuestScreen" component={GuestScreen}  options={{ }}/>
-      {/* Add any other screens related to authentication here if needed */}
     </userStack.Navigator>
   );
 }
