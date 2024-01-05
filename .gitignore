@@ -33,3 +33,9 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# SonarLint
+.sonarlint/
+
+# SonarQube
+sonar-project.properties
