@@ -1,0 +1,4 @@
+
+wjavascript:S3776 "TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÞÚ“¢8§ÀÍßÍ1
+zjavascript:S6478!"RMove this component definition out of the parent component and pass data as props.(Ä•ó¶þÿÿÿÿ8§ÀÍßÍ1
+€javascript:S3923+"]This conditional operation returns the same value whether the condition is "true" or "false".(Ö“ý©8§ÀÍßÍ1
