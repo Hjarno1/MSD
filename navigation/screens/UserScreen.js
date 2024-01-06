@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Alert } from 'react-native';
 
-export default function UserScreen({ navigation }) {
-    const userName = "User"; // Replace with the user's actual name
+export default function UserScreen ({ navigation }) {
+    const userName = "User";
 
     const handleLogout = () => {
         Alert.alert(
@@ -16,13 +16,15 @@ export default function UserScreen({ navigation }) {
                 {
                     text: "Log Out",
                     onPress: () => {
-                        // Perform the log out action here
-                        // Navigate to the SignScreen within the AuthenticationStack
                         navigation.navigate('SignScreen');
                     },
                 },
             ]
         );
+    };
+
+    const navigateToScreen = (screenName) => {
+        navigation.navigate(screenName);
     };
 
     return (
@@ -34,19 +36,19 @@ export default function UserScreen({ navigation }) {
             <View style={styles.linkContainer}>
                 <TouchableOpacity
                     style={styles.link}
-                    onPress={() => navigation.navigate('PersonalScreen')}>
+                    onPress={() => navigateToScreen('PersonalScreen')}>
                     <Text style={styles.linkText}>Personal Information</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.link}
-                    onPress={() => navigation.navigate('PreviousRentScreen')}>
+                    onPress={() => navigateToScreen('PreviousRentScreen')}>
                     <Text style={styles.linkText}>Rent Periods</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.link}
-                    onPress={() => navigation.navigate('ChangePasswordScreen')}>
+                    onPress={() => navigateToScreen('ChangePasswordScreen')}>
                     <Text style={styles.linkText}>Change Password</Text>
                 </TouchableOpacity>
 
@@ -58,7 +60,7 @@ export default function UserScreen({ navigation }) {
             </View>
         </SafeAreaView>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
